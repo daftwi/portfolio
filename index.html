@@ -10,21 +10,29 @@
 </head>
 <body>
     <header>
-        <img src="img/main-logo.svg" alt="main-logo">
+        <img src="img/main-logo.svg" alt="main-logo" style="height: 60px; width: 60px;">
         <nav>
-            Обо мне
-            Навыки
-            Интересы
-            Контакты
+            <a href="#aboutme">
+                Обо мне
+            </a>
+            <a href="#skills">
+                Навыки
+            </a>
+            <a href="#interests">
+                Интересы
+            </a>
+            <a href="#contacts">
+                Контакты
+            </a>
         </nav>
     </header>
     <main>
         <section>
             <h1>Дарья Федорова</h1>
             <p>Программист</p>
-            <img src="img/my-user-photo.jpg" alt="my-user-photo">
+            <img src="img/my-user-photo.jpg" alt="my-user-photo" style="height: 400px; width: 400px;">
         </section>
-        <section>
+        <section id="aboutme">
             <h2>Пара слов обо мне</h2>
             <p>Привет ✌</p>
             <p>В данный момент я учусь в магистратуре МФ МГТУ им. Н. Э. Баумана 
@@ -35,7 +43,7 @@
                 оценена комиссией.</p>
             <p>Также с 2022 г. я работаю инженером по нагрузочному тестированию в Сбере.</p>
         </section>
-        <section>
+        <section id="skills">
             <h2>Мои навыки</h2>
             <div>
                 Сортировать
@@ -43,50 +51,59 @@
                 по уровню
             </div>
             <dl>
-                <dt><img src="img/skill=html.svg" alt="html"> html</dt>
+                <dt><img src="img/skill=html.svg" alt="html" style="height: 30px; width: 30px;"> html</dt>
                 <dd>
                     <div style="width: 40%">40%</div>
                 </dd>
-                <dt><img src="img/skill=css.svg" alt="css"> css</dt>
+                <dt><img src="img/skill=css.svg" alt="css" style="height: 30px; width: 30px;"> css</dt>
                 <dd>
                     <div style="width: 40%">40%</div>
                 </dd>
-                <dt><img src="img/skill=python.svg" alt="python"> python</dt>
+                <dt><img src="img/skill=python.svg" alt="python" style="height: 30px; width: 30px;"> python</dt>
                 <dd>
                     <div style="width: 70%">70%</div>
                 </dd>
-                <dt><img src="img/skill=c++.svg" alt="c++"> c++</dt>
+                <dt><img src="img/skill=c++.svg" alt="c++" style="height: 30px; width: 30px;"> c++</dt>
                 <dd>
                     <div style="width: 30%">30%</div>
                 </dd>
-                <dt><img src="img/skill=javascript.svg" alt="javascript"> javascript</dt>
+                <dt><img src="img/skill=javascript.svg" alt="javascript" style="height: 30px; width: 30px;"> javascript</dt>
                 <dd>
                     <div style="width: 40%">40%</div>
                 </dd>
-                <dt><img src="img/skill=java.svg" alt="java"> java</dt>
+                <dt><img src="img/skill=java.svg" alt="java" style="height: 30px; width: 30px;"> java</dt>
                 <dd>
                     <div style="width: 80%">80%</div>
                 </dd>
-                <dt><img src="img/skill=php.svg" alt="php"> php</dt>
+                <dt><img src="img/skill=php.svg" alt="php" style="height: 30px; width: 30px;"> php</dt>
                 <dd>
                     <div style="width: 60%">60%</div>
                 </dd>
             </dl>
         </section>
-        <section>
+        <section id="interests">
             <h2>Мои интересы</h2>
             <p>Наибольший интерес для меня в данный момент представляет 
                 программирование и изучение искусственного интеллекта.</p>
             <p>Но помимо учёбы и работы я также люблю играть в компьютерные 
                 игры и читать зарубежную и русскую классику.</p>
         </section>
-        <section>
+        <section id="contacts">
             <h2>Мои контакты</h2>
             <ul>
-                <li><img src="img/icon=phone.svg" alt="phone"> +7 912 405-00-23</li>
-                <li><img src="img/icon=email.svg" alt="email"> daftwi310102002@gmail.com</li>
-                <li><img src="img/social=github.svg" alt="github"> <img src="img/social=instagram.svg" alt="instagram"> <img src="img/social=telegram.svg" alt="telegram"></li>
+                <li><a href="tel:+79124050023"><img src="img/icon=phone.svg" alt="phone" style="height: 30px; width: 30px;"> +7 912 405-00-23</a></li>
+                <li><a href="mailto:daftwi310102002@gmail.com"><img src="img/icon=email.svg" alt="email" style="height: 30px; width: 30px;"> daftwi310102002@gmail.com</a></li>
             </ul>
+            <button>
+                <a href="https://github.com/daftwi">
+                    <img src="img/social=github.svg" alt="github" style="height: 30px; width: 30px;">
+                </a>
+            </button>
+            <button>
+                <a href="https://t.me/dafuqisgoingon">
+                    <img src="img/social=telegram.svg" alt="telegram" style="height: 30px; width: 30px;">
+                </a>
+            </button>
         </section>
     </main>
     <footer>
