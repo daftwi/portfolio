@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="css/normalize.css" rel="normalize"> 
-    <link href="css/style.css" rel="style"> 
+    <link href="css/style.css" rel="stylesheet"> 
     
 </head>
 <body>
@@ -35,7 +35,7 @@
             <section class="name">
                 <h1>Дарья Федорова</h1>
                 <p class="subtitle">Программист</p>
-                <img src="img/my-user-photo.jpg" alt="my-user-photo" height="400" width="400">
+                <img class="main-photo" src="img/my-user-photo.jpg" alt="my-user-photo" height="400" width="400">
             </section>
             <section id="aboutme" class="intro">
                 <h2>Пара слов обо мне</h2>
@@ -55,33 +55,33 @@
                     <button>по названию</button>
                     <button>по уровню</button>
                 </div>
-                <dl>
-                    <dt>html</dt>
-                    <dd>
+                <dl class="skill-list">
+                    <dt class="skill-item skill-item_html">html</dt>
+                    <dd class="skill-level">
                         <div style="width: 40%">40%</div>
                     </dd>
-                    <dt>css</dt>
-                    <dd>
+                    <dt class="skill-item skill-item_css">css</dt>
+                    <dd class="skill-level">
                         <div style="width: 40%">40%</div>
                     </dd>
-                    <dt>python</dt>
-                    <dd>
+                    <dt class="skill-item skill-item_python">python</dt>
+                    <dd class="skill-level">
                         <div style="width: 70%">70%</div>
                     </dd>
-                    <dt>c++</dt>
-                    <dd>
+                    <dt class="skill-item skill-item_cpp">c++</dt>
+                    <dd class="skill-level">
                         <div style="width: 30%">30%</div>
                     </dd>
-                    <dt>javascript</dt>
-                    <dd>
+                    <dt class="skill-item skill-item_javascript">javascript</dt>
+                    <dd class="skill-level">
                         <div style="width: 40%">40%</div>
                     </dd>
-                    <dt>java</dt>
-                    <dd>
+                    <dt class="skill-item skill-item_java">java</dt>
+                    <dd class="skill-level">
                         <div style="width: 80%">80%</div>
                     </dd>
-                    <dt>php</dt>
-                    <dd>
+                    <dt class="skill-item skill-item_php">php</dt>
+                    <dd class="skill-level">
                         <div style="width: 60%">60%</div>
                     </dd>
                 </dl>
@@ -95,13 +95,13 @@
             </section>
             <section id="contacts" class="contacts">
                 <h2>Мои контакты</h2>
-                <ul>
-                    <li><a href="tel:+79124050023">+7 912 405-00-23</a></li>
-                    <li><a href="mailto:daftwi310102002@gmail.com">daftwi310102002@gmail.com</a></li>
+                <ul class="contact">
+                    <li><a class="contact-link contact-link_phone" href="tel:+79124050023">+7 912 405-00-23</a></li>
+                    <li><a class="contact-link contact-link_mail" href="mailto:daftwi310102002@gmail.com">daftwi310102002@gmail.com</a></li>
                 </ul>
-                <ul>
-                    <li><a href="https://github.com/daftwi">github</a></li>
-                    <li><a href="https://t.me/dafuqisgoingon">telegram</a></li>
+                <ul class="social">
+                    <li><a class="social-link social-link_github" href="https://github.com/daftwi"><span class="visually-hidden">github</span></a></li>
+                    <li><a class="social-link social-link_telegram" href="https://t.me/dafuqisgoingon"><span class="visually-hidden">telegram</span></a></li>
                 </ul>
             </section>
         </main>
