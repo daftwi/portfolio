@@ -7,8 +7,8 @@
     <meta name="description" content="Портфолио Федоровой Дарьи" lang="ru">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="css/normalize.css" rel="normalize"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet"> 
     <link href="css/style.css" rel="stylesheet"> 
     
 </head>
@@ -33,27 +33,33 @@
         </header>
         <main>
             <section class="name">
-                <h1>Дарья Федорова</h1>
-                <p class="subtitle">Программист</p>
+                <div>
+                    <h1>Дарья Федорова</h1>
+                    <p class="subtitle">Программист</p>
+                </div>
                 <img class="main-photo" src="img/my-user-photo.jpg" alt="my-user-photo" height="400" width="400">
             </section>
             <section id="aboutme" class="intro">
                 <h2>Пара слов обо мне</h2>
-                <p>Привет ✌</p>
-                <p>В данный момент я учусь в магистратуре МФ МГТУ им. Н. Э. Баумана 
-                    по направлению «Информатика и вычисли­тельная техника».</p>
-                <p>В прошлом году я защитила диплом бакалавра на тему «Разработка 
-                    прикладного программного интерфейса и системы отображения данных 
-                    для базы данных усреденных значений кафедры К3». Работа была высоко 
-                    оценена комиссией.</p>
-                <p>Также с 2022 г. я работаю инженером по нагрузочному тестированию в Сбере.</p>
+                <div class="text-wrapper">
+                    <p>Привет ✌</p>
+                    <p>В данный момент я учусь в магистратуре МФ МГТУ им. Н. Э. Баумана 
+                        по направлению «Информатика и вычисли­тельная техника».</p>
+                    <p>В прошлом году я защитила диплом бакалавра на тему «Разработка 
+                        прикладного программного интерфейса и системы отображения данных 
+                        для базы данных усреденных значений кафедры К3». Работа была высоко 
+                        оценена комиссией.</p>
+                    <p>Также с 2022 г. я работаю инженером по нагрузочному тестированию в Сбере.</p>
+                </div>
             </section>
             <section id="skills" class="skills">
-                <h2>Мои навыки</h2>
-                <div>
-                    Сортировать
-                    <button>по названию</button>
-                    <button>по уровню</button>
+                <div class="skills-top">
+                    <h2>Мои навыки</h2>
+                    <div class="skills-buttons">
+                        Сортировать
+                        <button>по названию</button>
+                        <button>по уровню</button>
+                    </div>
                 </div>
                 <dl class="skill-list">
                     <dt class="skill-item skill-item_html">html</dt>
@@ -88,10 +94,12 @@
             </section>
             <section id="interests" class="interests">
                 <h2>Мои интересы</h2>
-                <p>Наибольший интерес для меня в данный момент представляет 
-                    программирование и изучение искусственного интеллекта.</p>
-                <p>Но помимо учёбы и работы я также люблю играть в компьютерные 
-                    игры и читать зарубежную и русскую классику.</p>
+                <div class="text-wrapper">
+                    <p>Наибольший интерес для меня в данный момент представляет 
+                        программирование и изучение искусственного интеллекта.</p>
+                    <p>Но помимо учёбы и работы я также люблю играть в компьютерные 
+                        игры и читать зарубежную и русскую классику.</p>
+                </div>
             </section>
             <section id="contacts" class="contacts">
                 <h2>Мои контакты</h2>
