@@ -3,43 +3,36 @@ const skills = {
         {
             name: 'html',
             level: 40,
-            class: 'skill-item_html',
             file: 'skill=html.svg'
         },
         {
             name: 'css',
             level: 40,
-            class: 'skill-item_css',
             file: 'skill=css.svg'
         },
         {
             name: 'python',
             level: 70,
-            class: 'skill-item_python',
             file: 'skill=python.svg'
         },
         {
             name: 'c++',
             level: 30,
-            class: 'skill-item_cpp',
             file: 'skill=c++.svg'
         },
         {
             name: 'javascript',
             level: 40,
-            class: 'skill-item_javascript',
             file: 'skill=javascript.svg'
         },
         {
             name: 'java',
             level: 80,
-            class: 'skill-item_java',
             file: 'skill=java.svg'
         },
         {
             name: 'php',
             level: 60,
-            class: 'skill-item_php',
             file: 'skill=php.svg'
         }
     ],
