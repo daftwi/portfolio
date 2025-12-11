@@ -104,6 +104,8 @@ const skillList = document.querySelector('dl.skill-list');
 const skillSort = document.querySelector('.skills-buttons');
 const nav = document.querySelector('.main-nav');
 const navButton = document.querySelector('.nav-btn');
+const theme_switch = document.querySelector('.switch-checkbox');
+const body = document.querySelector('body');
 
 menu.close();
 
@@ -132,5 +134,20 @@ navButton.addEventListener('click', (e) => {
         menu.open();
     } else {
         menu.close();
+    }
+});
+
+if (localStorage.getItem('theme') === 'light') {
+    body.classList.remove('dark-theme');
+    theme_switch.checked = true;
+};
+
+theme_switch.addEventListener('change', (e) => {
+    if (e.target.checked === true) {
+        body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
     }
 });
