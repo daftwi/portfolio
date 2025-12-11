@@ -45,7 +45,7 @@ const skills = {
             const dtElement = document.createElement('dt');
             dtElement.className = 'skill-item';
             dtElement.textContent = skill.name;
-            dtElement.style.backgroundImage = `url('/img/${skill.file}')`;
+            dtElement.style.backgroundImage = `url('img/${skill.file}')`;
             
             const ddElement = document.createElement('dd');
             ddElement.className = 'skill-level';
