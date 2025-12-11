@@ -77,7 +77,7 @@ const skills = {
                 this.sortMode = type;
                 console.log('отсортировали данные по ' + type);
             } else {
-                this.data.reverse(this.getComparer(type));
+                this.data.reverse();
                 console.log('инвертировали порядок сортировки');
             }
         this.generateList(skillList);
