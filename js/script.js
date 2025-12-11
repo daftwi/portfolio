@@ -113,12 +113,13 @@ skillSort.addEventListener('click', (e) => {
     let target = e.target;
     
     if (target.nodeName === "BUTTON") {
-        switch(target.dataset.type) {
+        let type = target.dataset.type;
+        switch(type) {
             case 'name':
-                skills.sortList(target.dataset.type);
+                skills.sortList(type);
                 break;
             case 'level':
-                skills.sortList(target.dataset.type);
+                skills.sortList(type);
                 break;
             default:
                 console.log('неизвестная кнопка');

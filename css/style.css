@@ -399,11 +399,11 @@ p + p {
     }
     .nav-btn_close {
         background-image: url(../img/menu-btn=close.svg);
-        background-color: #FFFFFF;
+        background-color: var(--bg-color);
     }
     .nav-btn_open {
         background-image: url(../img/menu-btn=burger.svg);
-        background-color: #FFFFFF;
+        background-color: var(--bg-color);
     }
     .main-header-wrap {
         width: 100%;
