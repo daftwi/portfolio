@@ -39,10 +39,10 @@ const skills = {
         if (this.sortMode !== type) {
                 this.data.sort(this.getComparer(type));
                 this.sortMode = type;
-                console.log('отсортировали данные по ' + type);
+                console.log('Отсортировали данные по ' + type);
             } else {
                 this.data.reverse();
-                console.log('инвертировали порядок сортировки');
+                console.log('Инвертировали порядок сортировки');
             }
         this.generateList(skillList);
     },
@@ -134,7 +134,7 @@ skillSort.addEventListener('click', (e) => {
                 skills.sortList(type);
                 break;
             default:
-                console.log('неизвестная кнопка');
+                console.log('Неизвестная кнопка');
         }
     }
 });
