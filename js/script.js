@@ -1,41 +1,5 @@
 const skills = {
-    data: [
-        {
-            name: 'html',
-            level: 40,
-            file: 'skill=html.svg'
-        },
-        {
-            name: 'css',
-            level: 40,
-            file: 'skill=css.svg'
-        },
-        {
-            name: 'python',
-            level: 70,
-            file: 'skill=python.svg'
-        },
-        {
-            name: 'c++',
-            level: 30,
-            file: 'skill=c++.svg'
-        },
-        {
-            name: 'javascript',
-            level: 40,
-            file: 'skill=javascript.svg'
-        },
-        {
-            name: 'java',
-            level: 80,
-            file: 'skill=java.svg'
-        },
-        {
-            name: 'php',
-            level: 60,
-            file: 'skill=php.svg'
-        }
-    ],
+    data: [],
 
     sortMode: null,
 
@@ -81,6 +45,51 @@ const skills = {
                 console.log('инвертировали порядок сортировки');
             }
         this.generateList(skillList);
+    },
+
+    showErrorMessage(parentElement) {
+        parentElement.innerHTML = '';
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'error-message';
+        errorMessage.style.cssText = `
+            text-align: center;
+            color: #ff4444;
+            font-size: 18px;
+        `;
+        errorMessage.textContent = 'Не удалось загрузить данные о навыках.';
+        parentElement.appendChild(errorMessage);
+    },
+
+    disableSortButtons(disabled) {
+        skillSortButtons.forEach(button => {
+            button.disabled = disabled;
+            if (disabled) {
+                button.style.opacity = '0.5';
+                button.style.cursor = 'not-allowed';
+                button.style.pointerEvents = 'none';
+                button.setAttribute('tabindex', '-1');
+            } else {
+                button.style.opacity = '1';
+                button.style.cursor = 'pointer';
+                button.style.pointerEvents = 'auto';
+                button.removeAttribute('tabindex');
+            }
+        });
+    },
+
+    getData() {
+        fetch('db/skills.json')
+            .then(data => data.json())
+            .then(object => {
+                this.data = object;
+                this.disableSortButtons(false);
+                this.generateList(skillList);
+            })
+            .catch(error => {
+                console.error('Ошибка загрузки данных:', error)
+                this.disableSortButtons(true);
+                this.showErrorMessage(skillList);
+            });
     }
 };
 
@@ -102,20 +111,21 @@ const menu = {
 
 const skillList = document.querySelector('dl.skill-list');
 const skillSort = document.querySelector('.skills-buttons');
+const skillSortButtons = document.querySelectorAll('.skills-buttons button');
 const nav = document.querySelector('.main-nav');
 const navButton = document.querySelector('.nav-btn');
-const theme_switch = document.querySelector('.switch-checkbox');
+const themeSwitch = document.querySelector('.switch-checkbox');
 const body = document.querySelector('body');
 
 menu.close();
 
-skills.generateList(skillList);
+skills.getData();
 
 skillSort.addEventListener('click', (e) => {
     let target = e.target;
     
     if (target.nodeName === "BUTTON") {
-        let type = target.dataset.type;
+        const type = target.dataset.type;
         switch(type) {
             case 'name':
                 skills.sortList(type);
@@ -139,10 +149,10 @@ navButton.addEventListener('click', (e) => {
 
 if (localStorage.getItem('theme') === 'light') {
     body.classList.remove('dark-theme');
-    theme_switch.checked = true;
+    themeSwitch.checked = true;
 };
 
-theme_switch.addEventListener('change', (e) => {
+themeSwitch.addEventListener('change', (e) => {
     if (e.target.checked === true) {
         body.classList.remove('dark-theme');
         localStorage.setItem('theme', 'light');

@@ -19,6 +19,10 @@
     background-color: var(--txt-color);
 }
 
+.dark-theme footer {
+    background-color: var(--green);
+}
+
 body {
     font-family: "Open Sans", "Arial", sans-serif;
 
