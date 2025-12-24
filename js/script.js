@@ -3,7 +3,7 @@ const skills = {
 
     sortMode: null,
 
-    generateList(parentElement) {
+    render(parentElement) {
         parentElement.innerHTML = '';
         this.data.forEach(skill => {
             const dtElement = document.createElement('dt');
@@ -19,7 +19,7 @@ const skills = {
             divElement.textContent = skill.level;
             
             ddElement.appendChild(divElement);
-            skillList.append(dtElement, ddElement);
+            this.skillList.append(dtElement, ddElement);
         });
     },
 
@@ -44,52 +44,51 @@ const skills = {
                 this.data.reverse();
                 console.log('Инвертировали порядок сортировки');
             }
-        this.generateList(skillList);
+        this.render(this.skillList);
     },
 
     showErrorMessage(parentElement) {
         parentElement.innerHTML = '';
         const errorMessage = document.createElement('div');
         errorMessage.className = 'error-message';
-        errorMessage.style.cssText = `
-            text-align: center;
-            color: #ff4444;
-            font-size: 18px;
-        `;
         errorMessage.textContent = 'Не удалось загрузить данные о навыках.';
         parentElement.appendChild(errorMessage);
     },
 
     disableSortButtons(disabled) {
-        skillSortButtons.forEach(button => {
+        this.skillSortButtons.forEach(button => {
             button.disabled = disabled;
             if (disabled) {
-                button.style.opacity = '0.5';
-                button.style.cursor = 'not-allowed';
-                button.style.pointerEvents = 'none';
                 button.setAttribute('tabindex', '-1');
             } else {
-                button.style.opacity = '1';
-                button.style.cursor = 'pointer';
-                button.style.pointerEvents = 'auto';
                 button.removeAttribute('tabindex');
             }
         });
     },
 
-    getData() {
-        fetch('db/skills.json')
+    getData(filePath) {
+        fetch(filePath)
             .then(data => data.json())
             .then(object => {
                 this.data = object;
                 this.disableSortButtons(false);
-                this.generateList(skillList);
+                this.render(this.skillList);
             })
             .catch(error => {
                 console.error('Ошибка загрузки данных:', error)
                 this.disableSortButtons(true);
-                this.showErrorMessage(skillList);
+                this.showErrorMessage(this.skillList);
             });
+    },
+
+    init() {
+        this.skillList = document.querySelector('dl.skill-list');
+        this.skillSort = document.querySelector('.skills-buttons');
+        this.skillSortButtons = document.querySelectorAll('.skills-buttons button');
+
+        this.dataPath = 'db/skills.json';
+
+        this.getData(this.dataPath);
     }
 };
 
@@ -109,20 +108,16 @@ const menu = {
     }
 };
 
-const skillList = document.querySelector('dl.skill-list');
-const skillSort = document.querySelector('.skills-buttons');
-const skillSortButtons = document.querySelectorAll('.skills-buttons button');
 const nav = document.querySelector('.main-nav');
 const navButton = document.querySelector('.nav-btn');
 const themeSwitch = document.querySelector('.switch-checkbox');
 const body = document.querySelector('body');
 
 menu.close();
+skills.init();
 
-skills.getData();
-
-skillSort.addEventListener('click', (e) => {
-    let target = e.target;
+skills.skillSort.addEventListener('click', (e) => {
+    const target = e.target;
     
     if (target.nodeName === "BUTTON") {
         const type = target.dataset.type;

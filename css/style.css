@@ -8,6 +8,7 @@
     --txt-color: #212121;
     --green: #09A494;
     --bg-color: #FFFFFF;
+    --red:#ff4444;
 }
 
 .dark-theme {
@@ -116,6 +117,12 @@ button {
     border-color:  var(--green);
     color: var(--green);
     background-color: var(--bg-color);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .skills-buttons button:hover {
@@ -388,6 +395,11 @@ p + p {
     background-size: 24px;
 }
 
+.error-message {
+    text-align: center;
+    color: var(--red);
+    font-size: 18px;
+}
 
 @media screen and (max-width: 1024px) {
     h1 {
